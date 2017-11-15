@@ -1,3 +1,4 @@
 # deft2017
 
-Method 1 : Word2vec + tf-idf + LogisticRegression
+## Jonathan
+Method 1 : Word2vec + tf-idf + LogisticRegression (run1)
