@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Set these paths appropriately
+
+BIN=/mnt/c/Users/Kevin/source/repos/DEFT/treetagger/bin
+CMD=/mnt/c/Users/Kevin/source/repos/DEFT/treetagger/cmd
+LIB=/mnt/c/Users/Kevin/source/repos/DEFT/treetagger/lib
+
+OPTIONS="-token -lemma -sgml"
+
+TAGGER=${BIN}/tree-tagger
+TOKENIZER=${CMD}/utf8-tokenize.perl
+PARFILE=${LIB}/slovenian-utf8.par
+
+$TOKENIZER $* |
+$TAGGER $OPTIONS $PARFILE

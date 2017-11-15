@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Set these paths appropriately
+
+BIN=/mnt/c/Users/Kevin/source/repos/DEFT/treetagger/bin
+CMD=/mnt/c/Users/Kevin/source/repos/DEFT/treetagger/cmd
+LIB=/mnt/c/Users/Kevin/source/repos/DEFT/treetagger/lib
+
+OPTIONS="-token -lemma -sgml"
+
+TAGGER=${BIN}/tree-tagger
+TOKENIZER=${CMD}/tokenize.pl
+ABBR_LIST=${LIB}/swahili-abbreviations
+PARFILE=${LIB}/swahili.par
+
+$TOKENIZER -a $ABBR_LIST $* |
+$TAGGER $OPTIONS $PARFILE

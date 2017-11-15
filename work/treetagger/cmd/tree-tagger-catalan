@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Set these paths appropriately
+
+BIN=/mnt/c/Users/Kevin/source/repos/DEFT/treetagger/bin
+CMD=/mnt/c/Users/Kevin/source/repos/DEFT/treetagger/cmd
+LIB=/mnt/c/Users/Kevin/source/repos/DEFT/treetagger/lib
+
+OPTIONS="-token -lemma -sgml"
+
+TOKENIZER=${CMD}/utf8-tokenize.perl
+TAGGER=${BIN}/tree-tagger
+ABBR_LIST=${LIB}/catalan-abbreviations
+PARFILE=${LIB}/catalan-utf8.par
+
+$TOKENIZER -c -a $ABBR_LIST $* |
+$TAGGER $OPTIONS $PARFILE
