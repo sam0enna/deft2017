@@ -10,16 +10,16 @@ le.fit(["mixed", "negative", "objective", "positive"])
 LabeledSentence = gensim.models.doc2vec.LabeledSentence
 
 
-def load_test_file():
-    test_data = pd.read_csv('../../data_test/task1-test.csv', sep='\t', names=['TweetID', 'Content'],
+def load_test_file(file_path):
+    test_data = pd.read_csv(file_path, sep='\t', names=['TweetID', 'Content'],
                             skiprows=range(1, 9))
 
     print('Test data set loaded with shape', test_data.shape)
     return test_data
 
 
-def load_train_file():
-    tweets_data = pd.read_csv('../../data_train/task1-train.csv', sep='\t', names=['TweetID', 'Content', 'Polarity'],
+def load_train_file(file_path):
+    tweets_data = pd.read_csv(file_path, sep='\t', names=['TweetID', 'Content', 'Polarity'],
                               skiprows=range(1, 9))
     tweets_data['Polarity'] = transform_polarity_to_int(tweets_data['Polarity'])
 
