@@ -7,7 +7,7 @@ import string
 import numpy as np  # high dimensional vector computing library.
 import os
 import unicodedata
-from work.equip4.util import *
+from util import *
 
 from gensim.models.word2vec import Word2Vec  # the word2vec model gensim class
 from sklearn.linear_model import LogisticRegression
